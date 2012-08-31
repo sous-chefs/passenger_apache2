@@ -1,3 +1,9 @@
+## v1.0.0:
+
+* [COOK-1097] - documentation missing for mod_rails recipe
+* [COOK-1132] - example doesn't work
+* [COOK-1133] - update to passenger v3.0.11
+
 ## v0.99.4:
 
 * [COOK-958] - fix regression for loadmodule on debian/ubuntu
