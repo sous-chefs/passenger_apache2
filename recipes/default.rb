@@ -22,21 +22,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-include_recipe "apache2"
+include_recipe 'apache2'
 
-case node[:passenger][:install_method]
+case node['passenger']['install_method']
 when 'source'
   include_recipe 'passenger_apache2::source'
 when 'package'
   include_recipe 'passenger_apache2::package'
 else
-  raise "Unsupported passenger installation method requested: #{node[:passenger][:install_method]}. Supported: source or package."
+  raise "Unsupported passenger installation method requested: #{node['passenger']['install_method']}. Supported: source or package."
 end
 
-if(node[:passenger][:manage_module_conf])
+if(node['passenger']['manage_module_conf'])
   include_recipe 'passenger_apache2::mod_rails'
 end
 
-apache_module "passenger" do
-  module_path node[:passenger][:module_path]
+apache_module 'passenger' do
+  module_path node['passenger']['module_path']
 end
