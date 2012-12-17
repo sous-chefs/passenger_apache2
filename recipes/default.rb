@@ -22,14 +22,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-include_recipe "apache2"
-include_recipe "build-essential"
+include_recipe 'apache2'
+include_recipe 'build-essential'
 
-case node[:platform]
-when "arch"
-  package "apache"
-when "centos","redhat"
-  package "httpd-devel"
+case node['platform']
+when 'arch'
+  package 'apache'
+when 'centos','redhat'
+  package 'httpd-devel'
   if node['platform_version'].to_f < 6.0
     package 'curl-devel'
   else
@@ -45,16 +45,17 @@ else
                                 end
   %W( #{apache_development_package} libapr1-dev libcurl4-gnutls-dev ).each do |pkg|
     package pkg do
-      action :upgrade
+      action        :upgrade
     end
   end
 end
 
-gem_package "passenger" do
-  version node[:passenger][:version]
+gem_package 'passenger' do
+  version         node['passenger']['version']
 end
 
-execute "passenger_module" do
-  command 'passenger-install-apache2-module --auto'
-  creates node[:passenger][:module_path]
+execute 'passenger_module' do
+  command         'passenger-install-apache2-module --auto'
+  creates         node['passenger']['module_path']
+  not_if          { `passenger --version` =~ /#{Regexp.escape(node['passenger']['version'])}/ }
 end
