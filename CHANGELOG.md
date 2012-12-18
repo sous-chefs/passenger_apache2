@@ -1,3 +1,8 @@
+## v1.1.0:
+
+* [COOK-2003] - only able to use apache2-prefork-dev to compile
+  passenger
+
 ## v1.0.0:
 
 * [COOK-1097] - documentation missing for mod_rails recipe
