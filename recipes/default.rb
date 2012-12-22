@@ -57,4 +57,5 @@ end
 execute "passenger_module" do
   command 'passenger-install-apache2-module --auto'
   creates node[:passenger][:module_path]
+  not_if { `passenger --version` =~ /#{Regexp.escape(node['passenger']['version'])}/ }
 end
