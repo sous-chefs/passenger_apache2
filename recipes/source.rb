@@ -26,7 +26,7 @@ else
 end
 
 gem_package "passenger" do
-  version node[:passenger][:source][:version]
+  version node[:passenger][:version]
 end
 
 execute "passenger_module" do

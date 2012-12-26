@@ -1,4 +1,7 @@
+unless(node[:passenger][:package][:name])
+  raise 'Passenger package name must be defined!'
+end
 
-node[:passenger][:packages].each do |pass_pkg|
-  package pass_pkg
+package node[:passenger][:package][:name] do
+  version node[:passenger][:package][:version]
 end
