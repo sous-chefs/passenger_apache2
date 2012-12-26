@@ -33,6 +33,10 @@ else
   raise "Unsupported passenger installation method requested: #{node[:passenger][:install_method]}. Supported: source or package."
 end
 
+if(node[:passenger][:manage_module_conf])
+  include_recipe 'passenger_apache2::mod_rails'
+end
+
 apache_module "passenger" do
   module_path node[:passenger][:module_path]
 end
