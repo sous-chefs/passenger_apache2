@@ -24,7 +24,7 @@
 
 include_recipe "passenger_apache2"
 
-node.default[:passenger][:root_path]   = "#{node[:languages][:ruby][:gems_dir]}/gems/passenger-#{node[:passenger][:version]}"
+# Allows proper default path if root path was overridden
 node.default[:passenger][:module_path] = "#{node[:passenger][:root_path]}/ext/apache2/mod_passenger.so"
 
 if platform?("ubuntu","debian")
