@@ -1,5 +1,7 @@
 include_recipe "build-essential"
 
+node.default[:passenger][:apache_mpm]  = 'prefork'
+
 case node[:platform]
 when "arch"
   package "apache"
@@ -13,7 +15,7 @@ when "centos","redhat"
     package 'zlib-devel'
   end
 else
-  apache_development_package =  if %w( worker threaded ).include? node[:passenger][:source][:apache_mpm]
+  apache_development_package =  if %w( worker threaded ).include? node[:passenger][:apache_mpm]
                                   'apache2-threaded-dev'
                                 else
                                   'apache2-prefork-dev'
