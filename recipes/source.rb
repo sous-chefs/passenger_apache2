@@ -33,5 +33,5 @@ end
 
 execute "passenger_module" do
   command 'passenger-install-apache2-module --auto'
-  creates node[:passenger][:source][:module_path]
+  creates node[:passenger][:module_path]
 end
