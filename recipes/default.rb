@@ -43,5 +43,6 @@ ruby_block "reload_ruby" do
     node.load_attribute_by_short_filename('default', 'passenger_apache2')
   end
 
-  action :nothing # gets triggered via notifications if another cookbook installs a ruby
+  action :nothing
+  subscribes :create, resources("ohai[reload]"), :immediately
 end
