@@ -44,5 +44,5 @@ ruby_block "reload_ruby" do
   end
 
   action :nothing
-  subscribes :create, resources("ohai[reload]"), :immediately
+  subscribes :create, "ohai[reload]", :immediately
 end
