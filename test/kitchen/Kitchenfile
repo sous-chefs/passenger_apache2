@@ -1,5 +1,5 @@
-cookbook "passenger_apache2" do
-  configuration("default") { runtimes [] }
-  configuration("mod_rails") { runtimes [] }
+cookbook 'passenger_apache2' do
+  configuration('default') { runtimes [] }
+  configuration('mod_rails') { runtimes [] }
   runtimes []
 end
