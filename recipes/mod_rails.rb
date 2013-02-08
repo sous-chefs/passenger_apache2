@@ -30,7 +30,7 @@ if platform?('ubuntu','debian')
     source 'passenger.load.erb'
     owner 'root'
     group 'root'
-    mode '0755'
+    mode 0755
   end
 end
 
@@ -42,5 +42,5 @@ template "#{node['apache']['dir']}/mods-available/passenger.conf" do
   source 'passenger.conf.erb'
   owner 'root'
   group 'root'
-  mode '0644'
+  mode 0644
 end
