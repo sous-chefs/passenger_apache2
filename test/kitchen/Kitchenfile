@@ -1,5 +1,6 @@
 cookbook 'passenger_apache2' do
-  configuration('default') { runtimes [] }
-  configuration('mod_rails') { runtimes [] }
-  runtimes []
+  configuration 'default'
+  configuration 'package'
+  # until COOK-2414:
+  exclude :platform => 'centos', :configuration => 'package'
 end

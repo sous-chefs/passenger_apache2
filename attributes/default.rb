@@ -7,4 +7,4 @@ default['passenger']['module_path'] = "#{passenger['root_path']}/ext/apache2/mod
 default['passenger']['max_pool_size'] = 6
 default['passenger']['manage_module_conf'] = true
 default['passenger']['package']['name'] = nil
-default['passenger']['package']['version'] = passenger['version']
+default['passenger']['package']['version'] = node['passenger']['version']

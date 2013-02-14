@@ -14,14 +14,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-unless(node[:passenger][:package][:name])
+unless(node['passenger']['package']['name'])
   raise 'Passenger package name must be defined!'
 end
 
-if(node[:passenger][:apache_mpm])
-  Chef::Log.warn 'Attribute `node[:passenger][:apache_mpm]` is not effective in package based installs'
+if(node['passenger']['apache_mpm'])
+  Chef::Log.warn "Attribute `node['passenger']['apache_mpm']` is not effective in package based installs"
 end
 
-package node[:passenger][:package][:name] do
-  version node[:passenger][:package][:version]
+package node['passenger']['package']['name'] do
+  version node['passenger']['package']['version']
 end
