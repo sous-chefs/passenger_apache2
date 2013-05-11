@@ -23,7 +23,7 @@ if(node['passenger']['apache_mpm'])
 end
 
 package node['passenger']['package']['name'] do
-  version node['passenger']['package']['version']
+  version node['passenger']['package']['version'] if node['passenger']['package']['version']
 end
 
 apache_module 'passenger'
