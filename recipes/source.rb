@@ -48,8 +48,9 @@ gem_package "passenger" do
 end
 
 # Allows proper default path if root path was overridden
+passenger_module_dir_name = node['passenger']['version'].start_with?('4') ? 'buildout' : 'ext'
 node.default['passenger']['root_path']   = "#{node.languages['ruby']['gems_dir']}/gems/passenger-#{node['passenger']['version']}"
-node.default['passenger']['module_path'] = "#{node['passenger']['root_path']}/ext/apache2/mod_passenger.so"
+node.default['passenger']['module_path'] = "#{node['passenger']['root_path']}/#{passenger_module_dir_name}/apache2/mod_passenger.so"
 
 execute "passenger_module" do
   command "passenger-install-apache2-module _#{node['passenger']['version']}_ --auto"
