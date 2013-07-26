@@ -47,7 +47,8 @@ gem_package "passenger" do
   version node['passenger']['version']
 end
 
+
 execute "passenger_module" do
-  command 'passenger-install-apache2-module --auto'
+  command "passenger-install-apache2-module _#{node['passenger']['version']}_ --auto"
   creates node['passenger']['module_path']
 end
