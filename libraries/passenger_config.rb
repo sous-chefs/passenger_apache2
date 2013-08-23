@@ -8,14 +8,13 @@ class Chef::Recipe::PassengerConfig
   # From version 3.9.1.beta through version 4.0.5, the build artifacts
   # were put in 'libout'.
   # Since then, build artifacts are in 'buildout'
+  #
+  # All versions: http://rubygems.org/gems/passenger/versions
   def build_directory_for_version(version)
-    # some passenger version strings have an additional, 4th part (.beta/rcX) which
-    # would break our comparison. So consider only first 3 parts of version.
-    # All versions: http://rubygems.org/gems/passenger/versions
-    version = version.split('.')[0,3].join('.')
-    if Chef::VersionConstraint.new('> 4.0.5').include?(version)
+    required_version = Gem::Version.new(version)
+    if Gem::Requirement.new('> 4.0.5').satisfied_by?(required_version)
       'buildout'
-    elsif Chef::VersionConstraint.new('>= 3.9.0').include?(version)
+    elsif Gem::Requirement.new('>= 3.9.0').satisfied_by?(required_version)
       'libout'
     else
       'ext'
