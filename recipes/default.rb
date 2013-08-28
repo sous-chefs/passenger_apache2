@@ -37,3 +37,12 @@ end
 if(node['passenger']['manage_module_conf'])
   include_recipe 'passenger_apache2::mod_rails'
 end
+
+ruby_block "reload_ruby" do
+  block do
+    node.load_attribute_by_short_filename('default', 'passenger_apache2')
+  end
+
+  action :nothing
+  subscribes :create, "ohai[reload]", :immediately
+end
