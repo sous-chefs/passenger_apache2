@@ -2,6 +2,11 @@ passenger_apache2 Cookbook CHANGELOG
 ====================================
 This file is used to list changes made in each version of the passenger_apache2 cookbook.
 
+v2.0.4
+------
+### Bug
+- **[COOK-2293](https://tickets.opscode.com/browse/COOK-2293)** - Automatically reload Ohai attribtues
+
 v2.0.2
 ------
 ### Bug
