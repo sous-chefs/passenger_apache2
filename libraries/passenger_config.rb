@@ -1,4 +1,4 @@
-class Chef::Recipe::PassengerConfig
+module Chef::Recipe::PassengerConfig
 
   # This function takes a version string and returns the name of the directory
   # containing the build artifacts for that version.
@@ -10,7 +10,7 @@ class Chef::Recipe::PassengerConfig
   # Since then, build artifacts are in 'buildout'
   #
   # All versions: http://rubygems.org/gems/passenger/versions
-  def build_directory_for_version(version)
+  def self.build_directory_for_version(version)
     required_version = Gem::Version.new(version)
     if Gem::Requirement.new('> 4.0.5').satisfied_by?(required_version)
       'buildout'
@@ -19,9 +19,5 @@ class Chef::Recipe::PassengerConfig
     else
       'ext'
     end
-  end
-
-  def self.build_directory_for_version(version)
-    new.build_directory_for_version(version)
   end
 end
