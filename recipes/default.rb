@@ -40,7 +40,10 @@ end
 
 ruby_block "reload_ruby" do
   block do
-    node.load_attribute_by_short_filename('default', 'passenger_apache2')
+    # Only available on Chef 10.x, but only needed there anyway
+    if node.respond_to?(:load_attribute_by_short_filename)
+      node.load_attribute_by_short_filename('default', 'passenger_apache2')
+    end
   end
 
   action :nothing
