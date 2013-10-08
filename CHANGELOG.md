@@ -2,6 +2,16 @@ passenger_apache2 Cookbook CHANGELOG
 ====================================
 This file is used to list changes made in each version of the passenger_apache2 cookbook.
 
+v2.1.0
+------
+### Bug
+- **[COOK-3654](https://tickets.opscode.com/browse/COOK-3654)** - Fix compatibility with Chef 11
+- **[COOK-3395](https://tickets.opscode.com/browse/COOK-3395)** - Fix an issue where the recipe does not compile the version of passenger specified on the node attribute
+
+### Improvement
+- **[COOK-3486](https://tickets.opscode.com/browse/COOK-3486)** - Make `PassengerRuby` configurable
+
+
 v2.0.4
 ------
 ### Bug
