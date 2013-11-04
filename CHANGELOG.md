@@ -2,6 +2,13 @@ passenger_apache2 Cookbook CHANGELOG
 ====================================
 This file is used to list changes made in each version of the passenger_apache2 cookbook.
 
+v2.1.2
+------
+### Bug
+- [COOK-3706] Fix permission of passenger.load
+- [COOK-3747] Call full path for installing module
+
+
 v2.1.0
 ------
 ### Bug
