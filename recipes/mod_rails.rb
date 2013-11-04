@@ -30,7 +30,7 @@ if platform_family?('debian')
     source 'passenger.load.erb'
     owner 'root'
     group 'root'
-    mode 0755
+    mode 0644
   end
 end
 
