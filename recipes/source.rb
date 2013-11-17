@@ -48,6 +48,6 @@ gem_package "passenger" do
 end
 
 execute "passenger_module" do
-  command "#{node['languages']['ruby']['ruby_bin']} #{node['passenger']['root_path']}/bin/passenger-install-apache2-module _#{node['passenger']['version']}_ --auto"
+  command "#{node['passenger']['ruby_bin']} #{node['passenger']['root_path']}/bin/passenger-install-apache2-module _#{node['passenger']['version']}_ --auto"
   creates node['passenger']['module_path']
 end

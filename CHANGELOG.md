@@ -2,6 +2,12 @@ passenger_apache2 Cookbook CHANGELOG
 ====================================
 This file is used to list changes made in each version of the passenger_apache2 cookbook.
 
+v2.1.4
+------
+### Improvement
+- [COOK-4005] Make the passenger apache module installation use optional custom ruby when building from source
+
+
 v2.1.2
 ------
 ### Bug
