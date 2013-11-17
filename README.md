@@ -27,7 +27,7 @@ Attributes
 * `node['passenger']['version']` - Specify the version of passenger to install.
 * `node['passenger']['max_pool_size']` - Sets PassengerMaxPoolSize in the Apache module config.
 * `node['passenger']['root_path']` - The location of the passenger gem.
-* `node['passenger']['ruby_bin']` - Sets PassengerRuby in the Apache module config and is used for passenger module configuration.. Defaults to `node['languages']['ruby']['ruby_bin']`.
+* `node['passenger']['ruby_bin']` - Sets PassengerRuby in the Apache module config and is used for passenger module configuration. Defaults to `node['languages']['ruby']['ruby_bin']`.
 * `node['passenger']['module_path']` - The location of the compiled passenger apache module.
 * `node['passenger']['install_method']` - Includes the "source" (gem install) or "package" recipe. Default "source."
 * `node['passenger']['apache_mpm']` - Override with an "override_attribute" (in a role, environment or with node.override) to "worker" or "threaded" to use apache2-threaded-dev package. Otherwise this assumes prefork.
