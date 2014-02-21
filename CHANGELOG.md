@@ -2,6 +2,15 @@ passenger_apache2 Cookbook CHANGELOG
 ====================================
 This file is used to list changes made in each version of the passenger_apache2 cookbook.
 
+v2.2.0 (2014-02-21)
+-------------------
+### Bug
+- **[COOK-4081](https://tickets.opscode.com/browse/COOK-4081)** - Install command does not use correct attribute
+
+### Improvement
+- **[COOK-4005](https://tickets.opscode.com/browse/COOK-4005)** - Make the passenger apache module installation step use optional custom ruby when building from source
+
+
 v2.1.4
 ------
 ### Improvement
