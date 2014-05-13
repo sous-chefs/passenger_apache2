@@ -34,9 +34,6 @@ if platform_family?('debian')
   end
 end
 
-# Allows proper default path if root path was overridden
-node.default['passenger']['module_path'] = "#{node['passenger']['root_path']}/#{PassengerConfig.build_directory_for_version(node['passenger']['version'])}/apache2/mod_passenger.so"
-
 template "#{node['apache']['dir']}/mods-available/passenger.conf" do
   cookbook 'passenger_apache2'
   source 'passenger.conf.erb'
