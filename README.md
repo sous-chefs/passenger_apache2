@@ -28,6 +28,7 @@ Attributes
 ----------
 * `node['passenger']['version']` - Specify the version of passenger to install.
 * `node['passenger']['max_pool_size']` - Sets PassengerMaxPoolSize in the Apache module config.
+* `node['passenger']['max_request_queue_size']` - Sets PassengerMaxRequestQueueSize in the Apache module config.
 * `node['passenger']['root_path']` - The location of the passenger gem.
 * `node['passenger']['ruby_bin']` - Sets PassengerRuby in the Apache module config and is used for passenger module configuration. Defaults to `node['languages']['ruby']['ruby_bin']`.
 * `node['passenger']['module_path']` - The location of the compiled passenger apache module.
