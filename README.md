@@ -33,6 +33,7 @@ Attributes
 * `node['passenger']['apache_mpm']` - Override with an "override_attribute" (in a role, environment or with node.override) to "worker" or "threaded" to use apache2-threaded-dev package. Otherwise this assumes prefork.
 * `node['passenger']['package']['name']` - Name of the package for passenger, default is nil, so this must be set before using the "package" install method/recipe.
 * `node['passenger']['package']['version']` - Specify the version of the passenger package to install. Uses `version` attribute above by default. To install the version available by default (latest, usually), delete the attribute in a recipe with this line:
+* `node['passenger']['install_module']` - Specify the boolean value which decides installing Passenger. Defaults to true, and setting to false skips the installation
 
   ```ruby
   node.set['passenger']['package'].delete('version')
