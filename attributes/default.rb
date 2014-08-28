@@ -11,3 +11,4 @@ default['passenger']['package']['name'] = nil
 default['passenger']['package']['version'] = nil
 default['passenger']['ruby_bin'] = languages['ruby']['ruby_bin']
 default['passenger']['install_module'] = true
+default['passenger']['rvm_ruby_string'] = 'default'

@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: passenger_apache2
-# Recipe:: source
+# Recipe:: source_rvm
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,12 +16,14 @@
 
 include_recipe 'passenger_apache2::source_dependencies'
 
-gem_package 'passenger' do
+rvm_gem 'passenger' do
+  ruby_string node['passenger']['rvm_ruby_string']
   version node['passenger']['version']
 end
 
-execute 'passenger_module' do
-  command "#{node['passenger']['ruby_bin']} #{node['passenger']['root_path']}/bin/passenger-install-apache2-module _#{node['passenger']['version']}_ --auto"
+rvm_shell 'passenger_module' do
+  code "passenger-install-apache2-module _#{node['passenger']['version']}_ --auto"
   creates node['passenger']['module_path']
   only_if { node['passenger']['install_module'] }
+  ruby_string node['passenger']['rvm_ruby_string']
 end
