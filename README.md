@@ -30,6 +30,7 @@ Attributes
 * `node['passenger']['ruby_bin']` - Sets PassengerRuby in the Apache module config and is used for passenger module configuration. Defaults to `node['languages']['ruby']['ruby_bin']`.
 * `node['passenger']['module_path']` - The location of the compiled passenger apache module.
 * `node['passenger']['install_method']` - Includes the "source" (gem install) or "package" recipe. Default "source."
+* `node['passenger']['gem_bin']` - For "source" install method, specify the `gem` binary to be used for installing the passenger gem.  Defaults to "gem"
 * `node['passenger']['apache_mpm']` - Override with an "override_attribute" (in a role, environment or with node.override) to "worker" or "threaded" to use apache2-threaded-dev package. Otherwise this assumes prefork.
 * `node['passenger']['package']['name']` - Name of the package for passenger, default is nil, so this must be set before using the "package" install method/recipe.
 * `node['passenger']['package']['version']` - Specify the version of the passenger package to install. Uses `version` attribute above by default. To install the version available by default (latest, usually), delete the attribute in a recipe with this line:
