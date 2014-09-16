@@ -44,6 +44,7 @@ else
 end
 
 gem_package "passenger" do
+  gem_binary node['passenger']['gem_bin']
   version node['passenger']['version']
 end
 
