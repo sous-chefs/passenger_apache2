@@ -30,6 +30,11 @@ when "rhel"
     package 'openssl-devel'
     package 'zlib-devel'
   end
+when "suse"
+  package "apache2-devel"
+  package 'curl-devel'
+  package 'openssl-devel'
+  package 'zlib-devel'
 else
   apache_development_package =  if %w( worker threaded ).include? node['passenger']['apache_mpm']
                                   'apache2-threaded-dev'
