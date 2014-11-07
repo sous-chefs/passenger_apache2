@@ -4,3 +4,6 @@ PassengerMaxPoolSize <%= node['passenger']['max_pool_size'] %>
 <% if node['passenger']['max_request_queue_size'] %>
 PassengerMaxRequestQueueSize <%= node['passenger']['max_request_queue_size'] %>
 <% end %>
+<% if node['passenger']['min_instances'] %>
+PassengerMinInstances <%= node['passenger']['min_instances'] %>
+<% end %>
