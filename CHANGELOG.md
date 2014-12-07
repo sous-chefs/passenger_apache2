@@ -2,6 +2,12 @@ passenger_apache2 Cookbook CHANGELOG
 ====================================
 This file is used to list changes made in each version of the passenger_apache2 cookbook.
 
+v2.2.3 (2014-12-07)
+-------------------
+- Fix idempotence check to check for existence of the right file, at the right time (#34, #37, #42)
+- Constrain apache2 cookbook version (#32, #33)
+- Update passenger version to latest bugfix release (4.0.53)
+
 v2.2.2 (2014-08-25)
 -------------------
 - COOK-4666 Include attribute conditional check to install module
