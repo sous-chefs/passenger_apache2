@@ -49,6 +49,8 @@ end
 
 execute "passenger_module" do
   command "#{node['passenger']['ruby_bin']} #{node['passenger']['root_path']}/bin/passenger-install-apache2-module _#{node['passenger']['version']}_ --auto"
-  creates node['passenger']['module_path']
   only_if { node['passenger']['install_module'] }
+  # this is late eval'd when Chef converges this resource, and the
+  # attribute may have been modified by the `mod_rails` recipe.
+  not_if { ::File.exist?(node['passenger']['module_path']) }
 end
