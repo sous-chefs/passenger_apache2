@@ -1,26 +1,32 @@
 passenger_apache2 Cookbook
 ==========================
+
 Installs passenger for Apache 2.
 
 
 Requirements
 ------------
+
 Requires Chef 0.10.10+ and Ohai 0.6.10+ for `platform_family` attribute use.
 
 ### Platforms
 Tested on the following platforms:
 
 - Ubuntu 10.04, 12.04
-- CentOS 5.8, 6.3
+- CentOS 5, 6
 
-The source install method was used on CentOS. It may work on other platforms with or without modification.
+The source install method was used on CentOS. See the `.kitchen.yml` file for platform testing matrix.
+
+This cookbook may work on other platforms with or without local modification.
+
+**Note**: This cookbook is not yet supported on Ubuntu 14.04, which uses Apache HTTPD 2.4.
 
 ### Cookbooks
-Opscode cookbooks:
 
-- apache2
-- build-essential
+The following cookbooks are used as dependencies:
 
+- [apache2](https://supermarket.chef.io/cookbooks/apache2)
+- [build-essential](https://supermarket.chef.io/cookbooks/build-essential)
 
 Attributes
 ----------
@@ -42,16 +48,21 @@ Attributes
 
 Recipes
 -------
+
 ### default
+
 Installs passenger from gem (source) or package depending on the value of the `install_method` attribute.
 
 ### mod_rails
+
 Installs the passenger gem and enables the module in Apache2.
 
 ### source
+
 Installs passenger as a RubyGem.
 
 ### package
+
 Installs passenger as a Package.
 
 Set the `install_method` attribute to package, then set the `package['name']` attribute to the correct package for your platform. The recipe does not yet handle adding yum repositories for RHEL platforms, so that should be done in another recipe until COOK-2414 is resolved.
@@ -61,6 +72,7 @@ Set the `node['passenger']['package']['version']` attribute to the correct value
 
 Usage
 -----
+
 For example, to run a Rails application on passenger:
 
 ```ruby
@@ -80,13 +92,14 @@ A sample config template is provided, `web_app.conf.erb`. If this is suitable fo
 
 License & Authors
 -----------------
-- Author: Joshua Timberman (<joshua@opscode.com>)
+- Author: Joshua Timberman (<joshua@chef.io>)
 - Author: Joshua Sierles (<joshua@37signals.com>)
 - Author: Michael Hale (<mikehale@gmail.com>)
 - Author: Chris Roberts (<chrisroberts.code@gmail.com>)
 
 ```text
 Copyright: 2009-2013, Opscode, Inc
+Copyright: 2014, Chef Software, Inc.
 Copyright: 2009, 37signals
 Copright: 2009, Michael Hale
 
