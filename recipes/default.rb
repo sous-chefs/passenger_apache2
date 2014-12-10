@@ -27,6 +27,8 @@ include_recipe 'apache2'
 case node['passenger']['install_method']
 when 'source'
   include_recipe 'passenger_apache2::source'
+when 'source_rvm'
+  include_recipe 'passenger_apache2::source_rvm'
 when 'package'
   include_recipe 'passenger_apache2::package'
   node.set['passenger']['manage_module_conf'] = false
