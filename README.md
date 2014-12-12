@@ -89,6 +89,14 @@ end
 
 A sample config template is provided, `web_app.conf.erb`. If this is suitable for your application, add 'cookbook "passenger"' to the define above to use that template. Otherwise, copy the template to the cookbook where you're using `web_app`, and modify as needed. The cookbook parameter is optional, if omitted it will search the cookbook where the define is used.
 
+Known Issues
+-----
+
+When run as a daemonized process under init on linux, using
+https://github.com/opscode-cookbooks/chef-client/blob/master/recipes/init_service.rb for example,
+the /sbin/service script scrubs the environment, including the HOME environment variable.
+In some versions, Passenger depends on the HOME environment variable to be present.
+This can be worked around by setting the necessary environment variables directly in your recipes.
 
 License & Authors
 -----------------
