@@ -7,28 +7,13 @@ driver_config:
 
 platforms:
 - name: ubuntu-12.04
-  driver_config:
-    box: opscode-ubuntu-12.04
-    box_url: https://opscode-vm-bento.s3.amazonaws.com/vagrant/opscode_ubuntu-12.04_provisionerless.box
   run_list:
   - recipe[apt]
-
 - name: ubuntu-10.04
-  driver_config:
-    box: opscode-ubuntu-10.04
-    box_url: https://opscode-vm-bento.s3.amazonaws.com/vagrant/opscode_ubuntu-10.04_provisionerless.box
   run_list:
   - recipe[apt]
-
-- name: centos-6.4
-  driver_config:
-    box: opscode-centos-6.4
-    box_url: https://opscode-vm-bento.s3.amazonaws.com/vagrant/opscode_centos-6.4_provisionerless.box
-
-- name: centos-5.9
-  driver_config:
-    box: opscode-centos-5.9
-    box_url: https://opscode-vm-bento.s3.amazonaws.com/vagrant/opscode_centos-5.9_provisionerless.box
+- name: centos-6.5
+- name: centos-5.10
 
 suites:
 - name: default
@@ -40,13 +25,13 @@ suites:
   run_list:
   - recipe[passenger_apache2_test::package]
   - recipe[passenger_apache2]
-  excludes: ["centos-5.9", "centos-6.4"]
+  excludes: ["centos-5.10", "centos-6.5"]
   attributes: {}
 
 - name: version-override
   run_list:
   - recipe[passenger_apache2]
-  excludes: ["centos-5.9", "centos-6.4", "ubuntu-10.04"]
+  excludes: ["centos-5.10", "centos-6.5", "ubuntu-10.04"]
   attributes:
     passenger:
       version: "4.0.5"
