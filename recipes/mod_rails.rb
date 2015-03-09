@@ -31,6 +31,8 @@ template "#{node['apache']['dir']}/mods-available/passenger.load" do
   group 'root'
   mode '0644'
   only_if { platform_family?('debian') }
+
+  notifies :reload, 'service[apache2]'
 end
 
 # Allows proper default path if root path was overridden
@@ -42,6 +44,8 @@ template "#{node['apache']['dir']}/mods-available/passenger.conf" do
   owner 'root'
   group 'root'
   mode '0644'
+
+  notifies :reload, 'service[apache2]'
 end
 
 apache_module 'passenger' do
