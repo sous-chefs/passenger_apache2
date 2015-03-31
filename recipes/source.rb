@@ -45,6 +45,7 @@ end
 
 gem_package "passenger" do
   version node['passenger']['version']
+  gem_binary "#{node['passenger']['bin_dir']}/gem" unless node['passenger']['bin_dir'].nil?
 end
 
 execute "passenger_module" do
