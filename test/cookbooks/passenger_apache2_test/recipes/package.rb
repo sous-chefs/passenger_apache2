@@ -27,4 +27,4 @@ node.set['passenger']['package']['name'] = case node['platform_family']
                                              'mod_passenger'
                                            end
 
-include_recipe "passenger_apache2::default"
+include_recipe 'passenger_apache2::default'

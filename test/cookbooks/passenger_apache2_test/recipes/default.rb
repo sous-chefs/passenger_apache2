@@ -17,4 +17,4 @@
 # limitations under the License.
 #
 
-include_recipe "passenger_apache2::default"
+include_recipe 'passenger_apache2::default'

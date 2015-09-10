@@ -31,14 +31,14 @@ when 'package'
   include_recipe 'passenger_apache2::package'
   node.set['passenger']['manage_module_conf'] = false
 else
-  raise "Unsupported passenger installation method requested: #{node['passenger']['install_method']}. Supported: source or package."
+  fail "Unsupported passenger installation method requested: #{node['passenger']['install_method']}. Supported: source or package."
 end
 
-if(node['passenger']['manage_module_conf'])
+if node['passenger']['manage_module_conf']
   include_recipe 'passenger_apache2::mod_rails'
 end
 
-ruby_block "reload_ruby" do
+ruby_block 'reload_ruby' do
   block do
     # Only available on Chef 10.x, but only needed there anyway
     if node.respond_to?(:load_attribute_by_short_filename)
@@ -47,5 +47,5 @@ ruby_block "reload_ruby" do
   end
 
   action :nothing
-  subscribes :create, "ohai[reload]", :immediately
+  subscribes :create, 'ohai[reload]', :immediately
 end

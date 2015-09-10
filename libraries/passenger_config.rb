@@ -1,5 +1,4 @@
 module Chef::Recipe::PassengerConfig
-
   # This function takes a version string and returns the name of the directory
   # containing the build artifacts for that version.
   #
