@@ -14,3 +14,6 @@ depends 'build-essential'
 %w{ redhat centos scientific amazon oracle ubuntu debian arch }.each do |os|
   supports os
 end
+
+source_url 'https://github.com/chef-cookbooks/passenger_apache2' if respond_to?(:source_url)
+issues_url 'https://github.com/chef-cookbooks/passenger_apache2/issues' if respond_to?(:issues_url)
