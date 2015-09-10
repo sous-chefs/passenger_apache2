@@ -24,14 +24,13 @@
 
 include_recipe 'passenger_apache2'
 
-if platform_family?('debian')
-  template "#{node['apache']['dir']}/mods-available/passenger.load" do
-    cookbook 'passenger_apache2'
-    source 'passenger.load.erb'
-    owner 'root'
-    group 'root'
-    mode 0644
-  end
+template "#{node['apache']['dir']}/mods-available/passenger.load" do
+  cookbook 'passenger_apache2'
+  source 'passenger.load.erb'
+  owner 'root'
+  group 'root'
+  mode '0644'
+  only_if { platform_family?('debian') }
 end
 
 # Allows proper default path if root path was overridden
@@ -42,7 +41,7 @@ template "#{node['apache']['dir']}/mods-available/passenger.conf" do
   source 'passenger.conf.erb'
   owner 'root'
   group 'root'
-  mode 0644
+  mode '0644'
 end
 
 apache_module 'passenger' do
