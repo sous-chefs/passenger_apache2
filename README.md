@@ -1,6 +1,9 @@
 passenger_apache2 Cookbook
 ==========================
 
+[![Build Status](https://travis-ci.org/chef-cookbooks/passenger_apache2.svg?branch=master)](http://travis-ci.org/chef-cookbooks/passenger_apache2)
+[![Cookbook Version](https://img.shields.io/cookbook/v/passenger_apache2.svg)](https://supermarket.chef.io/cookbooks/passenger_apache2)
+
 Installs passenger for Apache 2.
 
 
@@ -98,8 +101,7 @@ License & Authors
 - Author: Chris Roberts (<chrisroberts.code@gmail.com>)
 
 ```text
-Copyright: 2009-2013, Opscode, Inc
-Copyright: 2014, Chef Software, Inc.
+Copyright: 2009-2015, Chef Software, Inc
 Copyright: 2009, 37signals
 Copright: 2009, Michael Hale
 
