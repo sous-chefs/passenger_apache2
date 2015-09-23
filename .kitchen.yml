@@ -24,13 +24,13 @@ suites:
   run_list:
   - recipe[passenger_apache2_test::package]
   - recipe[passenger_apache2]
-  excludes: ["centos-5.10", "centos-6.5"]
+  excludes: ["centos-6.7", "centos-7.1"]
   attributes: {}
 
 - name: version-override
   run_list:
   - recipe[passenger_apache2]
-  excludes: ["centos-5.10", "centos-6.5", "ubuntu-10.04"]
+  excludes: ["centos-6.7", "centos-7.1", "ubuntu-12.04"]
   attributes:
     passenger:
       version: "4.0.5"
