@@ -2,11 +2,11 @@
 # Cookbook Name:: passenger_apache2
 # Recipe:: default
 #
-# Author:: Joshua Timberman (<joshua@opscode.com>)
+# Author:: Joshua Timberman (<joshua@chef.io>)
 # Author:: Joshua Sierles (<joshua@37signals.com>)
 # Author:: Michael Hale (<mikehale@gmail.com>)
 #
-# Copyright:: 2009, Opscode, Inc
+# Copyright 20009-2015, Chef Software, Inc.
 # Copyright:: 2009, 37signals
 # Coprighty:: 2009, Michael Hale
 #

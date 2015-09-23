@@ -6,7 +6,7 @@
 # Author:: Joshua Sierles (<joshua@37signals.com>)
 # Author:: Michael Hale (<mikehale@gmail.com>)
 #
-# Copyright:: 2009, Opscode, Inc
+# Copyright:: 2009-2015, Chef Software, Inc
 # Copyright:: 2009, 37signals
 # Coprighty:: 2009, Michael Hale
 #
