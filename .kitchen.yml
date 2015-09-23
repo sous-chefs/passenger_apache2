@@ -7,6 +7,7 @@ provisioner:
 platforms:
   - name: centos-6.7
   - name: centos-7.1
+  - name: fedora-22
   - name: ubuntu-12.04
     run_list:
       - recipe[apt::default]
@@ -24,13 +25,13 @@ suites:
   run_list:
   - recipe[passenger_apache2_test::package]
   - recipe[passenger_apache2]
-  excludes: ["centos-6.7", "centos-7.1"]
+  excludes: ["centos-6.7", "centos-7.1", "fedora-22"]
   attributes: {}
 
 - name: version-override
   run_list:
   - recipe[passenger_apache2]
-  excludes: ["centos-6.7", "centos-7.1", "ubuntu-12.04"]
+  excludes: ["centos-6.7", "centos-7.1", "ubuntu-12.04", "fedora-22"]
   attributes:
     passenger:
       version: "4.0.5"
