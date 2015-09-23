@@ -21,7 +21,7 @@ Requirements
 
 #### Cookbooks
 - apache2 >= 2.0.0
-- build-essential >= 2.0.0
+- build-essential
 
 
 Attributes
