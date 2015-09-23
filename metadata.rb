@@ -3,7 +3,7 @@ maintainer        'Chef Software, Inc.'
 maintainer_email  'cookbooks@chef.io'
 license           'Apache 2.0'
 description       'Installs passenger for Apache2'
-version           '2.2.3'
+version           '2.3.0'
 
 recipe 'passenger_apache2::default', 'Installs Passenger as an Apache module'
 recipe 'passenger_apache2::mod_rails', 'Enables Apache module configuration for passenger module'

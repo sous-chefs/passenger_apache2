@@ -2,6 +2,24 @@ passenger_apache2 Cookbook CHANGELOG
 ====================================
 This file is used to list changes made in each version of the passenger_apache2 cookbook.
 
+v2.3.0 (2015-09-23)
+-------------------
+- Update Apache 2 requirement from 1.X.X to >= 2.0.0 which adds support for current Ubuntu and CentOS releases
+- The minimum supported Chef release is now 11.0
+- Added support for Fedora and openSUSE / SLES
+- Update source recipe to not upgrade packages.  Package upgrades should be done outside community cookbooks and not randomly during Chef runs.
+- Add chef standard gitignore and chefignore files
+- Add a .foodcritic file to exclude rules that aren't valid for this cookbook
+- Update Kitchen CI config for new platforms and format
+- Add Rubocop config
+- Add Travis CI config
+- Update Berksfile to 3.X format and remove Yum, which wasn't actually used
+- Update Contributing, Testing, and Maintainers docs
+- Add Rakefile for simplified testing
+- Update Gemfile with updated testing and development gems
+- Replace all references to Opscode with Chef Software
+- Add Travis CI and cookbook version badges to the Readme
+
 v2.2.3 (2014-12-07)
 -------------------
 - Fix idempotence check to check for existence of the right file, at the right time (#34, #37, #42)
@@ -20,19 +38,16 @@ v2.2.0 (2014-02-21)
 ### Improvement
 - **[COOK-4005](https://tickets.opscode.com/browse/COOK-4005)** - Make the passenger apache module installation step use optional custom ruby when building from source
 
-
 v2.1.4
 ------
 ### Improvement
 - [COOK-4005] Make the passenger apache module installation use optional custom ruby when building from source
-
 
 v2.1.2
 ------
 ### Bug
 - [COOK-3706] Fix permission of passenger.load
 - [COOK-3747] Call full path for installing module
-
 
 v2.1.0
 ------
@@ -42,7 +57,6 @@ v2.1.0
 
 ### Improvement
 - **[COOK-3486](https://tickets.opscode.com/browse/COOK-3486)** - Make `PassengerRuby` configurable
-
 
 v2.0.4
 ------
