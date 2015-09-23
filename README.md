@@ -9,27 +9,20 @@ Installs passenger for Apache 2.
 
 Requirements
 ------------
+#### Platforms
+- Debian/Ubuntu
+- RHEL/CentOS/Scientific/Amazon/Oracle
+- Fedora
+- Arch
+- openSUSE/SLES
 
-Requires Chef 0.10.10+ and Ohai 0.6.10+ for `platform_family` attribute use.
+#### Chef
+- Chef 11+
 
-### Platforms
-Tested on the following platforms:
+#### Cookbooks
+- apache2 >= 2.0.0
+- build-essential >= 2.0.0
 
-- Ubuntu 10.04, 12.04
-- CentOS 5, 6
-
-The source install method was used on CentOS. See the `.kitchen.yml` file for platform testing matrix.
-
-This cookbook may work on other platforms with or without local modification.
-
-**Note**: This cookbook is not yet supported on Ubuntu 14.04, which uses Apache HTTPD 2.4.
-
-### Cookbooks
-
-The following cookbooks are used as dependencies:
-
-- [apache2](https://supermarket.chef.io/cookbooks/apache2)
-- [build-essential](https://supermarket.chef.io/cookbooks/build-essential)
 
 Attributes
 ----------
