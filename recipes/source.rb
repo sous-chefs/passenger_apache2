@@ -38,7 +38,7 @@ else
                                end
   %W( #{apache_development_package} libapr1-dev libcurl4-gnutls-dev ).each do |pkg|
     package pkg do
-      action :upgrade
+      action :install
     end
   end
 end
