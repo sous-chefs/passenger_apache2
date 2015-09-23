@@ -4,7 +4,7 @@ passenger_apache2 Cookbook
 [![Build Status](https://travis-ci.org/chef-cookbooks/passenger_apache2.svg?branch=master)](http://travis-ci.org/chef-cookbooks/passenger_apache2)
 [![Cookbook Version](https://img.shields.io/cookbook/v/passenger_apache2.svg)](https://supermarket.chef.io/cookbooks/passenger_apache2)
 
-Installs passenger for Apache 2.
+Installs Phusion Passenger Ruby application server for Apache 2.
 
 
 Requirements
