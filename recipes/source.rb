@@ -16,37 +16,7 @@
 
 include_recipe 'build-essential'
 
-node.default['passenger']['apache_mpm'] = 'prefork'
 
-case node['platform_family']
-when 'arch'
-  package 'apache'
-when 'rhel', 'fedora'
-  package 'httpd-devel'
-  if node['platform_version'].to_f < 6.0
-    package 'curl-devel'
-  else
-    package 'libcurl-devel'
-    package 'openssl-devel'
-    package 'zlib-devel'
-  end
-when 'suse'
-  package 'apache2-devel'
-  package 'curl-devel'
-  package 'openssl-devel'
-  package 'zlib-devel'
-else
-  apache_development_package = if %w( worker threaded ).include? node['passenger']['apache_mpm']
-                                 'apache2-threaded-dev'
-                               else
-                                 'apache2-prefork-dev'
-                               end
-  %W( #{apache_development_package} libapr1-dev libcurl4-gnutls-dev ).each do |pkg|
-    package pkg do
-      action :install
-    end
-  end
-end
 
 gem_package 'passenger' do
   version node['passenger']['version']
