@@ -1,49 +1,46 @@
-passenger_apache2 Cookbook
-==========================
+# passenger_apache2 Cookbook
 
-[![Build Status](https://travis-ci.org/chef-cookbooks/passenger_apache2.svg?branch=master)](http://travis-ci.org/chef-cookbooks/passenger_apache2)
-[![Cookbook Version](https://img.shields.io/cookbook/v/passenger_apache2.svg)](https://supermarket.chef.io/cookbooks/passenger_apache2)
+[![Build Status](https://travis-ci.org/chef-cookbooks/passenger_apache2.svg?branch=master)](http://travis-ci.org/chef-cookbooks/passenger_apache2) [![Cookbook Version](https://img.shields.io/cookbook/v/passenger_apache2.svg)](https://supermarket.chef.io/cookbooks/passenger_apache2)
 
 Installs Phusion Passenger Ruby application server for Apache 2.
 
+## Requirements
 
-Requirements
-------------
-#### Platforms
+### Platforms
+
 - Debian/Ubuntu
 - RHEL/CentOS/Scientific/Amazon/Oracle
 - Fedora
 - Arch
 - openSUSE/SLES
 
-#### Chef
+### Chef
+
 - Chef 11+
 
-#### Cookbooks
+### Cookbooks
+
 - apache2 >= 2.0.0
 - build-essential
 
+## Attributes
 
-Attributes
-----------
-* `node['passenger']['version']` - Specify the version of passenger to install.
-* `node['passenger']['max_pool_size']` - Sets PassengerMaxPoolSize in the Apache module config.
-* `node['passenger']['root_path']` - The location of the passenger gem.
-* `node['passenger']['ruby_bin']` - Sets PassengerRuby in the Apache module config and is used for passenger module configuration. Defaults to `node['languages']['ruby']['ruby_bin']`.
-* `node['passenger']['module_path']` - The location of the compiled passenger apache module.
-* `node['passenger']['install_method']` - Includes the "source" (gem install) or "package" recipe. Default "source."
-* `node['passenger']['apache_mpm']` - Override with an "override_attribute" (in a role, environment or with node.override) to "worker" or "threaded" to use apache2-threaded-dev package. Otherwise this assumes prefork.
-* `node['passenger']['package']['name']` - Name of the package for passenger, default is nil, so this must be set before using the "package" install method/recipe.
-* `node['passenger']['package']['version']` - Specify the version of the passenger package to install. Uses `version` attribute above by default. To install the version available by default (latest, usually), delete the attribute in a recipe with this line:
-* `node['passenger']['install_module']` - Specify the boolean value which decides installing Passenger. Defaults to true, and setting to false skips the installation
+- `node['passenger']['version']` - Specify the version of passenger to install.
+- `node['passenger']['max_pool_size']` - Sets PassengerMaxPoolSize in the Apache module config.
+- `node['passenger']['root_path']` - The location of the passenger gem.
+- `node['passenger']['ruby_bin']` - Sets PassengerRuby in the Apache module config and is used for passenger module configuration. Defaults to `node['languages']['ruby']['ruby_bin']`.
+- `node['passenger']['module_path']` - The location of the compiled passenger apache module.
+- `node['passenger']['install_method']` - Includes the "source" (gem install) or "package" recipe. Default "source."
+- `node['passenger']['apache_mpm']` - Override with an "override_attribute" (in a role, environment or with node.override) to "worker" or "threaded" to use apache2-threaded-dev package. Otherwise this assumes prefork.
+- `node['passenger']['package']['name']` - Name of the package for passenger, default is nil, so this must be set before using the "package" install method/recipe.
+- `node['passenger']['package']['version']` - Specify the version of the passenger package to install. Uses `version` attribute above by default. To install the version available by default (latest, usually), delete the attribute in a recipe with this line:
+- `node['passenger']['install_module']` - Specify the boolean value which decides installing Passenger. Defaults to true, and setting to false skips the installation
 
   ```ruby
   node.set['passenger']['package'].delete('version')
   ```
 
-
-Recipes
--------
+## Recipes
 
 ### default
 
@@ -65,9 +62,7 @@ Set the `install_method` attribute to package, then set the `package['name']` at
 
 Set the `node['passenger']['package']['version']` attribute to the correct value for your system's available package repository if necessary. By default the value is nil which will install the latest package version from the distribution package manager.
 
-
-Usage
------
+## Usage
 
 For example, to run a Rails application on passenger:
 
@@ -85,21 +80,16 @@ end
 
 A sample config template is provided, `web_app.conf.erb`. If this is suitable for your application, add 'cookbook "passenger"' to the define above to use that template. Otherwise, copy the template to the cookbook where you're using `web_app`, and modify as needed. The cookbook parameter is optional, if omitted it will search the cookbook where the define is used.
 
-Known Issues
------
+## Known Issues
 
-When run as a daemonized process under init on linux, using
-https://github.com/opscode-cookbooks/chef-client/blob/master/recipes/init_service.rb for example,
-the /sbin/service script scrubs the environment, including the HOME environment variable.
-In some versions, Passenger depends on the HOME environment variable to be present.
-This can be worked around by setting the necessary environment variables directly in your recipes.
+When run as a daemonized process under init on linux, using <https://github.com/opscode-cookbooks/chef-client/blob/master/recipes/init_service.rb> for example, the /sbin/service script scrubs the environment, including the HOME environment variable. In some versions, Passenger depends on the HOME environment variable to be present. This can be worked around by setting the necessary environment variables directly in your recipes.
 
-License & Authors
------------------
-- Author: Joshua Timberman (<joshua@chef.io>)
-- Author: Joshua Sierles (<joshua@37signals.com>)
-- Author: Michael Hale (<mikehale@gmail.com>)
-- Author: Chris Roberts (<chrisroberts.code@gmail.com>)
+## License & Authors
+
+- Author: Joshua Timberman ([joshua@chef.io](mailto:joshua@chef.io))
+- Author: Joshua Sierles ([joshua@37signals.com](mailto:joshua@37signals.com))
+- Author: Michael Hale ([mikehale@gmail.com](mailto:mikehale@gmail.com))
+- Author: Chris Roberts ([chrisroberts.code@gmail.com](mailto:chrisroberts.code@gmail.com))
 
 ```text
 Copyright: 2009-2015, Chef Software, Inc
