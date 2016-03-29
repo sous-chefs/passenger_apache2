@@ -2,6 +2,17 @@
 
 This file is used to list changes made in each version of the passenger_apache2 cookbook.
 
+## v2.3.1 (2016-03-29)
+
+- Install Passenger using the correct Gem binary by adding default['passenger']['bin_dir'] and default['passenger']['bin']
+- Properly notify Apache2 to reload when configs change in mod_rails
+- Add known issues to the Readme
+- Run integration tests in Travis CI using Kitchen Docker
+- Add long_description to the metadata
+- Add basic converge coverage with ChefSpec
+- Update testing dependencies and resolve new Rubocop warnings
+- Remove incorrect build-essential dependency listed in the readme
+
 ## v2.3.0 (2015-09-23)
 
 - Update Apache 2 requirement from 1.X.X to >= 2.0.0 which adds support for current Ubuntu and CentOS releases
