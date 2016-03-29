@@ -31,7 +31,7 @@ when 'package'
   include_recipe 'passenger_apache2::package'
   node.set['passenger']['manage_module_conf'] = false
 else
-  fail "Unsupported passenger installation method requested: #{node['passenger']['install_method']}. Supported: source or package."
+  raise "Unsupported passenger installation method requested: #{node['passenger']['install_method']}. Supported: source or package."
 end
 
 if node['passenger']['manage_module_conf']

@@ -15,7 +15,7 @@
 # limitations under the License.
 
 unless node['passenger']['package']['name']
-  fail 'Passenger package name must be defined!'
+  raise 'Passenger package name must be defined!'
 end
 
 if node['passenger']['apache_mpm']
