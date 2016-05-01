@@ -19,7 +19,7 @@
 
 default['passenger']['install_method'] = 'source'
 
-default['passenger']['version']     = '4.0.53'
+default['passenger']['version']     = '4.0.60'
 default['passenger']['apache_mpm']  = nil
 default['passenger']['bin_dir'] = nil
 default['passenger']['root_path']   = "#{languages['ruby']['gems_dir']}/gems/passenger-#{passenger['version']}"
