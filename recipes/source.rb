@@ -1,6 +1,7 @@
 #
 # Cookbook Name:: passenger_apache2
 # Recipe:: source
+# Copyright:: 2009-2016, Chef Software, Inc
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -35,13 +36,16 @@ when 'suse'
   package 'curl-devel'
   package 'openssl-devel'
   package 'zlib-devel'
-else
-  apache_development_package = if %w( worker threaded ).include? node['passenger']['apache_mpm']
-                                 'apache2-threaded-dev'
-                               else
-                                 'apache2-prefork-dev'
-                               end
-  %W( #{apache_development_package} libapr1-dev libcurl4-gnutls-dev ).each do |pkg|
+when 'debian'
+  if %w( worker threaded ).include? node['passenger']['apache_mpm']
+    package 'apache2-threaded-dev'
+  elsif node['platform'] == 'ubuntu' && node['platform_version'].to_f >= 16.04
+    package 'apache2-dev'
+  else
+    package 'apache2-prefork-dev'
+  end
+
+  %w( libapr1-dev libcurl4-gnutls-dev ).each do |pkg|
     package pkg do
       action :install
     end
