@@ -1,4 +1,5 @@
 sudo: required
+dist: trusty
 
 # install the pre-release chef-dk.  Use chef-stable-precise to install the stable release
 addons:
@@ -14,10 +15,13 @@ env:
   matrix:
   - INSTANCE=default-ubuntu-1204
   - INSTANCE=default-ubuntu-1404
+  - INSTANCE=default-ubuntu-1604  
+  - INSTANCE=default-centos-5
   - INSTANCE=default-centos-6
   - INSTANCE=default-centos-7
   - INSTANCE=package-ubuntu-1204
   - INSTANCE=package-ubuntu-1404
+  - INSTANCE=package-ubuntu-1604
 
 # Don't `bundle install`
 install: echo "skip bundle install"
