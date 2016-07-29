@@ -8,16 +8,14 @@ platforms:
   - name: centos-5.11
   - name: centos-6.7
   - name: centos-7.2
-  - name: debian-7.10
+  - name: debian-7.11
     run_list: apt::default
-  - name: debian-8.4
+  - name: debian-8.5
     run_list: apt::default
   - name: freebsd-9.3
     run_list: freebsd::portsnap
   - name: freebsd-10.2
     run_list: freebsd::portsnap
-  - name: fedora-22
-    run_list: yum::dnf_yum_compat
   - name: fedora-23
     run_list: yum::dnf_yum_compat
   - name: ubuntu-12.04
@@ -28,22 +26,20 @@ platforms:
     run_list: apt::default
 
 suites:
-- name: default
+- name: source
   run_list:
   - recipe[passenger_apache2]
-  attributes: {}
 
 - name: package
   run_list:
   - recipe[passenger_apache2_test::package]
   - recipe[passenger_apache2]
-  excludes: ["centos-6.7", "centos-7.1", "fedora-22"]
-  attributes: {}
+  excludes: ["centos-6.7", "centos-7.2", "fedora-23"]
 
 - name: version-override
   run_list:
   - recipe[passenger_apache2]
-  excludes: ["centos-6.7", "centos-7.1", "ubuntu-12.04", "fedora-22"]
+  excludes: ["centos-6.7", "centos-7.2", "ubuntu-12.04", "fedora-23"]
   attributes:
     passenger:
       version: "4.0.5"

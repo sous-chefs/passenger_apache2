@@ -86,7 +86,7 @@ platforms:
       - RUN /usr/bin/apt-get install apt-transport-https net-tools -y
 
 suites:
-- name: default
+- name: source
   run_list:
   - recipe[passenger_apache2]
 
