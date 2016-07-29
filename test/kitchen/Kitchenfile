@@ -1,6 +1,0 @@
-cookbook 'passenger_apache2' do
-  configuration 'default'
-  configuration 'package'
-  # until COOK-2414:
-  exclude :platform => 'centos', :configuration => 'package'
-end

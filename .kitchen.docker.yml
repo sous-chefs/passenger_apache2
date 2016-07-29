@@ -34,27 +34,29 @@ platforms:
   driver:
     image: centos:5
     platform: rhel
-    run_command: /sbin/init
-    provision_command:
+    pid_one_command: /sbin/init
+    intermediate_instructions:
       - /usr/bin/yum install -y initscripts net-tools wget
 
 - name: centos-6
   driver:
     image: centos:6
+    platform: rhel
+    pid_one_command: /sbin/init
     intermediate_instructions:
       - RUN yum -y install tar which initscripts
 
 - name: centos-7
   driver:
     image: centos:7
-    intermediate_instructions:
-      - RUN yum clean all
-      - RUN yum -y install net-tools lsof
+    platform: rhel
     pid_one_command: /usr/lib/systemd/systemd
+    intermediate_instructions:
+      - RUN yum -y install net-tools lsof
 
-- name: fedora-23
+- name: fedora-latest
   driver:
-    image: fedora:23
+    image: fedora:latest
     pid_one_command: /usr/lib/systemd/systemd
     intermediate_instructions:
       - RUN dnf -y install tar yum
@@ -87,19 +89,17 @@ suites:
 - name: default
   run_list:
   - recipe[passenger_apache2]
-  attributes: {}
 
 - name: package
   run_list:
   - recipe[passenger_apache2_test::package]
   - recipe[passenger_apache2]
-  excludes: ["centos-6", "centos-7", "fedora-23"]
-  attributes: {}
+  excludes: ["centos-6", "centos-7", "fedora-latest"]
 
 - name: version-override
   run_list:
   - recipe[passenger_apache2]
-  excludes: ["centos-6", "centos-7", "ubuntu-12.04", "fedora-23"]
+  excludes: ["centos-6", "centos-7", "ubuntu-12.04", "fedora-latest"]
   attributes:
     passenger:
       version: "4.0.5"

@@ -24,7 +24,7 @@ when 'arch'
   package 'apache'
 when 'rhel', 'fedora'
   package 'httpd-devel'
-  if node['platform_version'].to_f < 6.0
+  if node['platform_version'].to_i < 6
     package 'curl-devel'
   else
     package 'libcurl-devel'
@@ -45,7 +45,7 @@ when 'debian'
     package 'apache2-prefork-dev'
   end
 
-  %w( libapr1-dev libcurl4-gnutls-dev ).each do |pkg|
+  %w( libssl-dev zlib1g-dev libapr1-dev libcurl4-gnutls-dev ).each do |pkg|
     package pkg do
       action :install
     end

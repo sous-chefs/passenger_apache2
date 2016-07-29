@@ -2,9 +2,9 @@ name              'passenger_apache2'
 maintainer        'Chef Software, Inc.'
 maintainer_email  'cookbooks@chef.io'
 license           'Apache 2.0'
-description       'Installs passenger for Apache2'
+description       'Installs Passenger for Apache2'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version           '2.3.1'
+version '2.3.1'
 
 recipe 'passenger_apache2::default', 'Installs Passenger as an Apache module'
 recipe 'passenger_apache2::mod_rails', 'Enables Apache module configuration for passenger module'
@@ -18,3 +18,5 @@ end
 
 source_url 'https://github.com/chef-cookbooks/passenger_apache2' if respond_to?(:source_url)
 issues_url 'https://github.com/chef-cookbooks/passenger_apache2/issues' if respond_to?(:issues_url)
+
+chef_version '>= 11.0' if respond_to?(:chef_version)
