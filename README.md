@@ -78,7 +78,17 @@ web_app "myproj" do
 end
 ```
 
-A sample config template is provided, `web_app.conf.erb`. If this is suitable for your application, add 'cookbook "passenger"' to the define above to use that template. Otherwise, copy the template to the cookbook where you're using `web_app`, and modify as needed. The cookbook parameter is optional, if omitted it will search the cookbook where the define is used.
+A sample config template is provided, `web_app.conf.erb`. If this is suitable for your application, add 'cookbook "passenger_apache2"' to the define above to use that template. Otherwise, copy the template to the cookbook where you're using `web_app`, and modify as needed. The cookbook parameter is optional, if omitted it will search the cookbook where the define is used.
+
+Example:
+
+```
+web_app "myproj" do
+...
+  cookbook "passenger_apache2"
+...
+end
+```
 
 ## Known Issues
 
