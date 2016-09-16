@@ -2,6 +2,16 @@
 
 This file is used to list changes made in each version of the passenger_apache2 cookbook.
 
+## 3.0.0 (2016-09-16)
+- Default to 4.0.60
+- Fix compatibility with Ubuntu 16.04
+- correct documentation for using cookbook's default web_app.conf template
+- add example of specifying where to get web app template from
+- Testing updates
+- Avoid node.set and instead use node.normal
+- Use multipackage installs to speed up installs
+- Require Chef 12.1
+
 ## v2.3.1 (2016-03-29)
 
 - Install Passenger using the correct Gem binary by adding default['passenger']['bin_dir'] and default['passenger']['bin']
