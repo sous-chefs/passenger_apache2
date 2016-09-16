@@ -29,7 +29,7 @@ when 'source'
   include_recipe 'passenger_apache2::source'
 when 'package'
   include_recipe 'passenger_apache2::package'
-  node.set['passenger']['manage_module_conf'] = false
+  node.normal['passenger']['manage_module_conf'] = false
 else
   raise "Unsupported passenger installation method requested: #{node['passenger']['install_method']}. Supported: source or package."
 end

@@ -27,15 +27,10 @@ when 'rhel', 'fedora'
   if node['platform_version'].to_i < 6
     package 'curl-devel'
   else
-    package 'libcurl-devel'
-    package 'openssl-devel'
-    package 'zlib-devel'
+    package %w(libcurl-devel openssl-devel zlib-devel)
   end
 when 'suse'
-  package 'apache2-devel'
-  package 'curl-devel'
-  package 'openssl-devel'
-  package 'zlib-devel'
+  package %w(apache2-devel curl-devel openssl-devel zlib-devel)
 when 'debian'
   if %w( worker threaded ).include? node['passenger']['apache_mpm']
     package 'apache2-threaded-dev'
@@ -45,11 +40,7 @@ when 'debian'
     package 'apache2-prefork-dev'
   end
 
-  %w( libssl-dev zlib1g-dev libapr1-dev libcurl4-gnutls-dev ).each do |pkg|
-    package pkg do
-      action :install
-    end
-  end
+  package %w(libssl-dev zlib1g-dev libapr1-dev libcurl4-gnutls-dev)
 end
 
 gem_package 'passenger' do
