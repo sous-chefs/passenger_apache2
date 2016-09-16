@@ -16,7 +16,7 @@ Installs Phusion Passenger Ruby application server for Apache 2.
 
 ### Chef
 
-- Chef 11+
+- Chef 12.1+
 
 ### Cookbooks
 
@@ -37,7 +37,7 @@ Installs Phusion Passenger Ruby application server for Apache 2.
 - `node['passenger']['install_module']` - Specify the boolean value which decides installing Passenger. Defaults to true, and setting to false skips the installation
 
   ```ruby
-  node.set['passenger']['package'].delete('version')
+  node.normal['passenger']['package'].delete('version')
   ```
 
 ## Recipes
