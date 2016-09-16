@@ -2,7 +2,7 @@
 # Cookbook Name:: passenger_apache2_test
 # Recipe:: package
 #
-# Copyright 2013-2015, Chef Software, Inc.
+# Copyright 2013-2016, Chef Software, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,10 +17,10 @@
 # limitations under the License.
 #
 
-node.set['passenger']['install_method'] = 'package'
-node.set['passenger']['package'].delete('version')
+node.normal['passenger']['install_method'] = 'package'
+node.normal['passenger']['package'].delete('version')
 
-node.set['passenger']['package']['name'] = case node['platform_family']
+node.normal['passenger']['package']['name'] = case node['platform_family']
                                            when 'debian'
                                              'libapache2-mod-passenger'
                                            when 'rhel'
