@@ -11,7 +11,6 @@ Installs Phusion Passenger Ruby application server for Apache 2.
 - Debian/Ubuntu
 - RHEL/CentOS/Scientific/Amazon/Oracle
 - Fedora
-- Arch
 - openSUSE/SLES
 
 ### Chef
