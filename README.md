@@ -32,8 +32,8 @@ Installs Phusion Passenger Ruby application server for Apache 2.
 - `node['passenger']['install_method']` - Includes the "source" (gem install) or "package" recipe. Default "source."
 - `node['passenger']['apache_mpm']` - Override with an "override_attribute" (in a role, environment or with node.override) to "worker" or "threaded" to use apache2-threaded-dev package. Otherwise this assumes prefork.
 - `node['passenger']['package']['name']` - Name of the package for passenger, default is nil, so this must be set before using the "package" install method/recipe.
-- `node['passenger']['package']['version']` - Specify the version of the passenger package to install. Uses `version` attribute above by default. To install the version available by default (latest, usually), delete the attribute in a recipe with this line:
 - `node['passenger']['install_module']` - Specify the boolean value which decides installing Passenger. Defaults to true, and setting to false skips the installation
+- `node['passenger']['package']['version']` - Specify the version of the passenger package to install. Uses `version` attribute above by default. To install the version available by default (latest, usually), delete the attribute in a recipe with this line:
 
   ```ruby
   node.normal['passenger']['package'].delete('version')
@@ -81,11 +81,11 @@ A sample config template is provided, `web_app.conf.erb`. If this is suitable fo
 
 Example:
 
-```
+```ruby
 web_app "myproj" do
-...
+  # ...
   cookbook "passenger_apache2"
-...
+  # ...
 end
 ```
 
