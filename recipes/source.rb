@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: passenger_apache2
+# Cookbook:: passenger_apache2
 # Recipe:: source
 # Copyright:: 2009-2016, Chef Software, Inc
 #
