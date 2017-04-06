@@ -4,3 +4,6 @@ PassengerMaxPoolSize <%= node['passenger']['max_pool_size'] %>
 <% if !node['passenger']['default_user'].nil? %>
 PassengerDefaultUser <%= node['passenger']['default_user'] %>
 <% end %>
+<% if !node['passenger']['default_group'].nil? %>
+PassengerDefaultGroup <%= node['passenger']['default_group'] %>
+<% end %>

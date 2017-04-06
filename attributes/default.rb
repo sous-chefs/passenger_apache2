@@ -25,6 +25,7 @@ default['passenger']['bin_dir'] = nil
 default['passenger']['root_path']   = "#{node['languages']['ruby']['gems_dir']}/gems/passenger-#{passenger['version']}"
 default['passenger']['module_path'] = "#{passenger['root_path']}/#{Chef::Recipe::PassengerConfig.build_directory_for_version(passenger['version'])}/apache2/mod_passenger.so"
 default['passenger']['default_user'] = nil
+default['passenger']['default_group'] = nil
 default['passenger']['max_pool_size'] = 6
 default['passenger']['manage_module_conf'] = true
 default['passenger']['package']['name'] = nil
