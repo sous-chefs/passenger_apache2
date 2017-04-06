@@ -6,8 +6,8 @@
 # Author:: Joshua Sierles (<joshua@37signals.com>)
 # Author:: Michael Hale (<mikehale@gmail.com>)
 #
-# Copyright:: 2009-2016, Chef Software, Inc
-# Copyright:: 2009-2016, 37signals
+# Copyright:: 2009-2017, Chef Software, Inc
+# Copyright:: 2009-2017, 37signals
 # Coprighty:: 2009, Michael Hale
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
