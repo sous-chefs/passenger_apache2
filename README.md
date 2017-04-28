@@ -101,7 +101,7 @@ When run as a daemonized process under init on linux, using <https://github.com/
 - Author: Chris Roberts ([chrisroberts.code@gmail.com](mailto:chrisroberts.code@gmail.com))
 
 ```text
-Copyright: 2009-2015, Chef Software, Inc
+Copyright: 2009-2017, Chef Software, Inc
 Copyright: 2009, 37signals
 Copright: 2009, Michael Hale
 
