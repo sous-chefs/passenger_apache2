@@ -2,6 +2,9 @@
 
 This file is used to list changes made in each version of the passenger_apache2 cookbook.
 
+## 3.0.1 (2017-04-27)
+- Fix attributes to work with Chef 13
+
 ## 3.0.0 (2016-09-16)
 - Default to 4.0.60
 - Fix compatibility with Ubuntu 16.04
