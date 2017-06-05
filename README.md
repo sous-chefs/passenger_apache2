@@ -38,6 +38,9 @@ Installs Phusion Passenger Ruby application server for Apache 2.
   ```ruby
   node.normal['passenger']['package'].delete('version')
   ```
+- `node['passenger']['enterprise']` - Set to true to install passenger enterprise.
+- `node['passenger']['data_bag_name']` - Specify the name of the secret data bag containing enterprise information.
+- `node['passenger']['data_bag_item']` - Specify the name of the secret data bag item containing enterprise information. The data bag item must contain the enterprise_token. Additional it may include the enterprise_license to create the license file on the server
 
 ## Recipes
 
