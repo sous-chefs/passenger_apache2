@@ -16,6 +16,7 @@
 # limitations under the License.
 
 include_recipe 'build-essential'
+include_recipe 'chef-vault'
 
 node.default['passenger']['apache_mpm'] = 'prefork'
 
@@ -44,14 +45,14 @@ when 'debian'
 end
 
 if node['passenger']['enterprise']
-  secrets_databag = chef_vauilt_item(node['passenger']['data_bag_name'], node['passenger']['data_bag_item'])
+  secrets_databag = chef_vault_item(node['passenger']['data_bag_name'], node['passenger']['data_bag_item'])
   gem_package 'passenger' do
     action :remove
     options '-x'
     gem_binary "#{node['passenger']['bin_dir']}/gem" unless node['passenger']['bin_dir'].nil?
   end
   gem_package 'passenger-enterprise-server' do
-    version node ['passenger']['version']
+    version node['passenger']['version']
     source "https://download:#{secrets_databag['enterprise_token']}@www.phusionpassenger.com/enterprise_gems/"
     gem_binary "#{node['passenger']['bin_dir']}/gem" unless node['passenger']['bin_dir'].nil?
   end
@@ -62,7 +63,7 @@ if node['passenger']['enterprise']
     end
   end
   node.override['passenger']['root_path'] = "#{node['languages']['ruby']['gems_dir']}/gems/passenger-enterprise-server-#{node['passenger']['version']}"
-  node.override['passenger']['module_path'] = "#{node['pasenger']['root_path']}/#{PassengerConfig.build_directory_for_version(node['passenger']['version'])}/apache2/mod_passenger.so"
+  node.override['passenger']['module_path'] = "#{node['passenger']['root_path']}/#{PassengerConfig.build_directory_for_version(node['passenger']['version'])}/apache2/mod_passenger.so"
 else
   gem_package 'passenger-enterprise-server' do
     action :remove
