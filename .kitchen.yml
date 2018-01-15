@@ -6,17 +6,17 @@ provisioner:
   deprecations_as_errors: true
 
 platforms:
-  - name: centos-6.9
-  - name: centos-7.3
-  - name: debian-7.11
+  - name: centos-6
+  - name: centos-7
+  - name: debian-7
     run_list: apt::default
-  - name: debian-8.8
+  - name: debian-8
     run_list: apt::default
-  - name: freebsd-10.3
+  - name: freebsd-10
     run_list: freebsd::portsnap
-  - name: freebsd-11.0
+  - name: freebsd-11
     run_list: freebsd::portsnap
-  - name: fedora-25
+  - name: fedora-26
   - name: ubuntu-14.04
     run_list: apt::default
   - name: ubuntu-16.04
@@ -31,12 +31,12 @@ suites:
   run_list:
   - recipe[passenger_apache2_test::package]
   - recipe[passenger_apache2]
-  excludes: ["centos-6.9", "centos-7.3", "fedora-25"]
+  excludes: ["centos-6", "centos-7", "fedora-26"]
 
 - name: version-override
   run_list:
   - recipe[passenger_apache2]
-  excludes: ["centos-6.9", "centos-7.3", "fedora-25"]
+  excludes: ["centos-6", "centos-7", "fedora-26"]
   attributes:
     passenger:
       version: "4.0.5"
