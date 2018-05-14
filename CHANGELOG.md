@@ -2,6 +2,13 @@
 
 This file is used to list changes made in each version of the passenger_apache2 cookbook.
 
+## 3.1.0 (2018-05-14)
+
+- Cookstyle fix
+- Remove maintainer files
+- Enable all Foodcritic rules
+- Use build_essential resource vs. recipe
+
 ## 3.0.1 (2017-04-27)
 - Fix attributes to work with Chef 13
 
