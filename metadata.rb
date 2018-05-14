@@ -10,7 +10,7 @@ recipe 'passenger_apache2::default', 'Installs Passenger as an Apache module'
 recipe 'passenger_apache2::mod_rails', 'Enables Apache module configuration for passenger module'
 
 depends 'apache2', '>= 2.0'
-depends 'build-essential'
+depends 'build-essential', '>= 5.0'
 
 %w( fedora redhat centos scientific amazon oracle ubuntu debian arch suse ).each do |os|
   supports os
