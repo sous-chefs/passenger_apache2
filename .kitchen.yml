@@ -8,13 +8,13 @@ provisioner:
 platforms:
   - name: centos-6
   - name: centos-7
-  - name: debian-7
-    run_list: apt::default
   - name: debian-8
+    run_list: apt::default
+  - name: debian-9
     run_list: apt::default
   - name: freebsd-10
   - name: freebsd-11
-  - name: fedora-26
+  - name: fedora-28
   - name: ubuntu-14.04
     run_list: apt::default
   - name: ubuntu-16.04
@@ -29,12 +29,12 @@ suites:
   run_list:
   - recipe[passenger_apache2_test::package]
   - recipe[passenger_apache2]
-  excludes: ["centos-6", "centos-7", "fedora-26"]
+  excludes: ["centos-6", "centos-7", "fedora-28"]
 
 - name: version-override
   run_list:
   - recipe[passenger_apache2]
-  excludes: ["centos-6", "centos-7", "fedora-26"]
+  excludes: ["centos-6", "centos-7", "fedora-28"]
   attributes:
     passenger:
       version: "4.0.5"
