@@ -44,7 +44,7 @@ This cookbook is maintained by the Sous Chefs. The Sous Chefs are a community of
 - `node['passenger']['package']['version']` - Specify the version of the passenger package to install. Uses `version` attribute above by default. To install the version available by default (latest, usually), delete the attribute in a recipe with this line:
 
   ```ruby
-  node.normal['passenger']['package'].delete('version')
+  node.default['passenger']['package'].delete('version')
   ```
 
 ## Recipes

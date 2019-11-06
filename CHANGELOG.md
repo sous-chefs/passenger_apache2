@@ -10,15 +10,17 @@ This file is used to list changes made in each version of the passenger_apache2 
 - Use build_essential resource vs. recipe
 
 ## 3.0.1 (2017-04-27)
+
 - Fix attributes to work with Chef 13
 
 ## 3.0.0 (2016-09-16)
+
 - Default to 4.0.60
 - Fix compatibility with Ubuntu 16.04
 - correct documentation for using cookbook's default web_app.conf template
 - add example of specifying where to get web app template from
 - Testing updates
-- Avoid node.set and instead use node.normal
+- Avoid node.set and instead use node.default
 - Use multipackage installs to speed up installs
 - Require Chef 12.1
 
