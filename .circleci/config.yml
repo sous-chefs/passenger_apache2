@@ -1,0 +1,106 @@
+---
+jobs:
+  final:
+    docker:
+      - image: bash:latest
+    steps:
+      - run:
+          name: Finish cooking
+          command: echo "Finished cooking"
+lint_and_unit: &lint_and_unit
+  - delivery
+  - danger
+  - lint-yaml
+  - lint-markdown
+version: 2.1
+orbs:
+  kitchen: sous-chefs/kitchen@2
+workflows:
+  kitchen:
+    jobs:
+      - kitchen/yamllint:
+          name: lint-yaml
+      - kitchen/mdlint:
+          name: lint-markdown
+      - kitchen/danger:
+          name: danger
+          context: Danger
+      - kitchen/delivery:
+          name: delivery
+      - kitchen/dokken-single:
+          name: source-debian-8
+          suite: source-debian-8
+          requires: *lint_and_unit
+      - kitchen/dokken-single:
+          name: source-centos-6
+          suite: source-centos-6
+          requires: *lint_and_unit
+      - kitchen/dokken-single:
+          name: source-centos-7
+          suite: source-centos-7
+          requires: *lint_and_unit
+      - kitchen/dokken-single:
+          name: source-fedora-latest
+          suite: source-fedora-latest
+          requires: *lint_and_unit
+      - kitchen/dokken-single:
+          name: source-ubuntu-1404
+          suite: source-ubuntu-1404
+          requires: *lint_and_unit
+      - kitchen/dokken-single:
+          name: source-ubuntu-1604
+          suite: source-ubuntu-1604
+          requires: *lint_and_unit
+      - kitchen/dokken-single:
+          name: source-opensuse-leap
+          suite: source-opensuse-leap
+          requires: *lint_and_unit
+      - kitchen/dokken-single:
+          name: package-debian-8
+          suite: package-debian-8
+          requires: *lint_and_unit
+      - kitchen/dokken-single:
+          name: package-ubuntu-1404
+          suite: package-ubuntu-1404
+          requires: *lint_and_unit
+      - kitchen/dokken-single:
+          name: package-ubuntu-1604
+          suite: package-ubuntu-1604
+          requires: *lint_and_unit
+      - kitchen/dokken-single:
+          name: package-opensuse-leap
+          suite: package-opensuse-leap
+          requires: *lint_and_unit
+      - kitchen/dokken-single:
+          name: version-override-debian-8
+          suite: version-override-debian-8
+          requires: *lint_and_unit
+      - kitchen/dokken-single:
+          name: version-override-ubuntu-1404
+          suite: version-override-ubuntu-1404
+          requires: *lint_and_unit
+      - kitchen/dokken-single:
+          name: version-override-ubuntu-1604
+          suite: version-override-ubuntu-1604
+          requires: *lint_and_unit
+      - kitchen/dokken-single:
+          name: version-override-opensuse-leap
+          suite: version-override-opensuse-leap
+          requires: *lint_and_unit
+      - final:
+          requires:
+            - source-debian-8
+            - source-centos-6
+            - source-centos-7
+            - source-fedora-latest
+            - source-ubuntu-1404
+            - source-ubuntu-1604
+            - source-opensuse-leap
+            - package-debian-8
+            - package-ubuntu-1404
+            - package-ubuntu-1604
+            - package-opensuse-leap
+            - version-override-debian-8
+            - version-override-ubuntu-1404
+            - version-override-ubuntu-1604
+            - version-override-opensuse-leap
