@@ -34,7 +34,7 @@ when 'suse'
 when 'debian'
   if %w( worker threaded ).include? node['passenger']['apache_mpm']
     package 'apache2-threaded-dev'
-  elsif node['platform'] == 'ubuntu' && node['platform_version'].to_f >= 16.04
+  elsif platform?('ubuntu') && node['platform_version'].to_f >= 16.04
     package 'apache2-dev'
   else
     package 'apache2-prefork-dev'

@@ -23,12 +23,11 @@ This cookbook is maintained by the Sous Chefs. The Sous Chefs are a community of
 
 ### Chef
 
-- Chef 13+
+- Chef 14+
 
 ### Cookbooks
 
 - apache2 >= 2.0.0
-- build-essential
 
 ## Attributes
 
