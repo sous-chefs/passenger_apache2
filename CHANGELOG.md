@@ -2,6 +2,13 @@
 
 This file is used to list changes made in each version of the passenger_apache2 cookbook.
 
+## UNRELEASED
+
+- Require Chef Infra Client 14 or later
+- Remove the dependency on the build-essential cookbook
+- Simplify platform check logic in the source recipe
+- Remove unused long_description and recipe metadata from metadata.rb
+
 ## 3.1.0 (2018-05-14)
 
 - Cookstyle fix
@@ -10,9 +17,11 @@ This file is used to list changes made in each version of the passenger_apache2 
 - Use build_essential resource vs. recipe
 
 ## 3.0.1 (2017-04-27)
+
 - Fix attributes to work with Chef 13
 
 ## 3.0.0 (2016-09-16)
+
 - Default to 4.0.60
 - Fix compatibility with Ubuntu 16.04
 - correct documentation for using cookbook's default web_app.conf template
