@@ -22,7 +22,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-include_recipe 'apache2'
+apache2_install 'default_install'
+
+service 'apache2' do
+  extend Apache2::Cookbook::Helpers
+  service_name lazy { apache_platform_service_name }
+  supports restart: true, status: true, reload: true
+  action :nothing
+end
 
 case node['passenger']['install_method']
 when 'source'
@@ -35,5 +42,5 @@ else
 end
 
 if node['passenger']['manage_module_conf']
-  include_recipe 'passenger_apache2::mod_rails'
+   apache2_module 'rails'
 end

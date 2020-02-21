@@ -5,7 +5,8 @@ license           'Apache-2.0'
 description       'Installs Passenger for Apache2'
 version '3.1.0'
 
-depends 'apache2', '>= 2.0'
+depends 'apache2', '>= 7.1'
+depends 'build-essential', '>= 5.0'
 
 %w( fedora redhat centos scientific amazon oracle ubuntu debian arch suse ).each do |os|
   supports os
@@ -14,4 +15,4 @@ end
 source_url 'https://github.com/chef-cookbooks/passenger_apache2'
 issues_url 'https://github.com/chef-cookbooks/passenger_apache2/issues'
 
-chef_version '>= 12.1'
+chef_version '>= 13.9'

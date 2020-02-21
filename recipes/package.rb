@@ -27,4 +27,4 @@ package node['passenger']['package']['name'] do
   version node['passenger']['package']['version']
 end
 
-apache_module 'passenger'
+apache2_module 'passenger'
