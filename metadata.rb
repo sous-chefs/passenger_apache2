@@ -6,7 +6,6 @@ description       'Installs Passenger for Apache2'
 version '3.1.0'
 
 depends 'apache2', '>= 7.1'
-depends 'build-essential', '>= 5.0'
 
 %w( fedora redhat centos scientific amazon oracle ubuntu debian arch suse ).each do |os|
   supports os

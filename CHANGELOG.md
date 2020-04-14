@@ -4,6 +4,9 @@ This file is used to list changes made in each version of the passenger_apache2 
 
 ## UNRELEASED
 
+- resolved cookstyle error: metadata.rb:9:1 refactor: `ChefModernize/UnnecessaryDependsChef14`
+- resolved cookstyle error: recipes/default.rb:45:1 convention: `Layout/IndentationWidth`
+
 - Require Chef Infra Client 14 or later
 - Remove the dependency on the build-essential cookbook
 - Simplify platform check logic in the source recipe
