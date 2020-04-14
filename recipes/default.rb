@@ -42,5 +42,5 @@ else
 end
 
 if node['passenger']['manage_module_conf']
-   apache2_module 'rails'
+  apache2_module 'rails'
 end
