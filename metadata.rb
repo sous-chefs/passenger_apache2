@@ -14,4 +14,4 @@ end
 source_url 'https://github.com/chef-cookbooks/passenger_apache2'
 issues_url 'https://github.com/chef-cookbooks/passenger_apache2/issues'
 
-chef_version '>= 13.9'
+chef_version '>= 14.0'
