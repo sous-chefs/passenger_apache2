@@ -14,5 +14,3 @@ end
 
 source_url 'https://github.com/chef-cookbooks/passenger_apache2'
 issues_url 'https://github.com/chef-cookbooks/passenger_apache2/issues'
-
-

@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of the passenger_apache2 cookbook.
 
+## Unreleased
+
+- resolved cookstyle error: metadata.rb:17:1 convention: `Layout/TrailingEmptyLines`
+
 ## 4.0.0 (2020-05-05)
 
 - resolved cookstyle error: metadata.rb:9:1 refactor: `ChefModernize/UnnecessaryDependsChef14`
