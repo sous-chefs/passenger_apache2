@@ -2,7 +2,7 @@
 
 This file is used to list changes made in each version of the passenger_apache2 cookbook.
 
-## Unreleased
+## 4.0.1 - *2020-12-31*
 
 - resolved cookstyle error: metadata.rb:17:1 convention: `Layout/TrailingEmptyLines`
 
