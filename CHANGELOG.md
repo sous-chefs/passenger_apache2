@@ -4,7 +4,11 @@ This file is used to list changes made in each version of the passenger_apache2 
 
 ## Unreleased
 
+- Standardise files with files in sous-chefs/repo-management
+
 ## 4.0.2 - *2021-06-01*
+
+- Standardise files with files in sous-chefs/repo-management
 
 ## 4.0.1 - *2020-12-31*
 
