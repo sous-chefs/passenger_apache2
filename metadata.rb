@@ -4,7 +4,7 @@ maintainer_email  'cookbooks@chef.io'
 license           'Apache-2.0'
 description       'Installs Passenger for Apache2'
 chef_version '>= 14.0'
-version '4.0.5'
+version '4.0.6'
 
 depends 'apache2', '>= 7.1'
 
