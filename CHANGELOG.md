@@ -2,6 +2,8 @@
 
 This file is used to list changes made in each version of the passenger_apache2 cookbook.
 
+## Unreleased
+
 ## 4.0.11 - *2023-04-01*
 
 ## 4.0.10 - *2023-04-01*
