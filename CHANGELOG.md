@@ -2,6 +2,13 @@
 
 This file is used to list changes made in each version of the passenger_apache2 cookbook.
 
+## [4.0.16](https://github.com/sous-chefs/passenger_apache2/compare/4.0.15...v4.0.16) (2025-10-16)
+
+
+### Bug Fixes
+
+* **ci:** Update workflows to use release pipeline ([#121](https://github.com/sous-chefs/passenger_apache2/issues/121)) ([30ee690](https://github.com/sous-chefs/passenger_apache2/commit/30ee690d39d7676920506db17a529cfc2ecc2008))
+
 ## 4.0.13 - *2023-04-07*
 
 Standardise files with files in sous-chefs/repo-management
