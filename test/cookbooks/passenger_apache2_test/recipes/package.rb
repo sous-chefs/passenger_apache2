@@ -17,14 +17,14 @@
 # limitations under the License.
 #
 
-node.normal['passenger']['install_method'] = 'package'
-node.normal['passenger']['package'].delete('version')
+node.default['passenger']['install_method'] = 'package'
+node.default['passenger']['package'].delete('version')
 
-node.normal['passenger']['package']['name'] = case node['platform_family']
-                                              when 'debian'
-                                                'libapache2-mod-passenger'
-                                              when 'rhel'
-                                                'mod_passenger'
-                                              end
+node.default['passenger']['package']['name'] = case node['platform_family']
+                                               when 'debian'
+                                                 'libapache2-mod-passenger'
+                                               when 'rhel'
+                                                 'mod_passenger'
+                                               end
 
 include_recipe 'passenger_apache2::default'
