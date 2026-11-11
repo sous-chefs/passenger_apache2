@@ -1,16 +1,23 @@
 name              'passenger_apache2'
-maintainer        'Chef Software, Inc.'
-maintainer_email  'cookbooks@chef.io'
+maintainer        'Sous Chefs'
+maintainer_email  'help@sous-chefs.org'
 license           'Apache-2.0'
 description       'Installs Passenger for Apache2'
 chef_version '>= 14.0'
-version '4.0.16'
+version '4.0.17'
 
 depends 'apache2', '>= 7.1'
 
-%w( fedora redhat centos scientific amazon oracle ubuntu debian arch suse ).each do |os|
-  supports os
-end
+supports 'fedora'
+supports 'redhat'
+supports 'centos'
+supports 'scientific'
+supports 'amazon'
+supports 'oracle'
+supports 'ubuntu'
+supports 'debian'
+supports 'arch'
+supports 'suse'
 
-source_url 'https://github.com/chef-cookbooks/passenger_apache2'
-issues_url 'https://github.com/chef-cookbooks/passenger_apache2/issues'
+source_url 'https://github.com/sous-chefs/passenger_apache2'
+issues_url 'https://github.com/sous-chefs/passenger_apache2/issues'

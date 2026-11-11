@@ -2,6 +2,14 @@
 
 This file is used to list changes made in each version of the passenger_apache2 cookbook.
 
+## [4.0.17](https://github.com/sous-chefs/passenger_apache2/compare/v4.0.16...v4.0.17) (2026-11-10)
+
+
+### Bug Fixes
+
+* **ci:** Update workflows to use release pipeline ([#121](https://github.com/sous-chefs/passenger_apache2/issues/121)) ([30ee690](https://github.com/sous-chefs/passenger_apache2/commit/30ee690d39d7676920506db17a529cfc2ecc2008))
+* migrate to Policyfile ([#127](https://github.com/sous-chefs/passenger_apache2/issues/127)) ([618bbed](https://github.com/sous-chefs/passenger_apache2/commit/618bbed1856982a9fdb6c90b495ff8cfcb6ec05b))
+
 ## [4.0.16](https://github.com/sous-chefs/passenger_apache2/compare/4.0.15...v4.0.16) (2025-10-16)
 
 
